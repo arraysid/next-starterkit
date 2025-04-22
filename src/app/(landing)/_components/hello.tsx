@@ -1,10 +1,15 @@
 "use client";
 
-import { api } from "@/trpc/react";
+import { useTRPC } from "@/trpc/react";
+import { useQuery } from "@tanstack/react-query";
 import { LucideLoader } from "lucide-react";
 
 export function HelloText() {
-  const { data, isLoading } = api.hello.get.useQuery({ text: "ArraysID" });
+  const api = useTRPC();
+
+  const { data, isLoading } = useQuery(
+    api.hello.get.queryOptions({ text: "ArraysID" }),
+  );
 
   return (
     <div className="mb-8">
