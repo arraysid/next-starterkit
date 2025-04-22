@@ -1,26 +1,34 @@
-import { fetchRequestHandler } from "@trpc/server/adapters/fetch";
-import { type NextRequest } from "next/server";
-
 import { env } from "@/env";
 import { appRouter } from "@/server/api/root";
 import { createTRPCContext } from "@/server/api/trpc";
+import { trpcServer } from "@hono/trpc-server";
+import type { FetchCreateContextFnOptions } from "@trpc/server/adapters/fetch";
+import { Hono, type Context } from "hono";
+import { handle } from "hono/vercel";
+
+export const runtime = "nodejs";
+
+const api = new Hono().basePath("/api");
 
 /**
  * This wraps the `createTRPCContext` helper and provides the required context for the tRPC API when
  * handling a HTTP request (e.g. when you make requests from Client Components).
  */
-const createContext = async (req: NextRequest) => {
+const createContext = async (
+  _: FetchCreateContextFnOptions,
+  honoContext: Context,
+) => {
   return createTRPCContext({
-    headers: req.headers,
+    headers: honoContext.req.raw.headers,
   });
 };
 
-const handler = (req: NextRequest) =>
-  fetchRequestHandler({
-    endpoint: "/api/trpc",
-    req,
+api.use(
+  "/procedures/*",
+  trpcServer({
     router: appRouter,
-    createContext: () => createContext(req),
+    createContext,
+    endpoint: "/api/procedures",
     onError:
       env.NODE_ENV === "development"
         ? ({ path, error }) => {
@@ -29,6 +37,8 @@ const handler = (req: NextRequest) =>
             );
           }
         : undefined,
-  });
+  }),
+);
 
-export { handler as GET, handler as POST };
+export const GET = handle(api);
+export const POST = handle(api);
