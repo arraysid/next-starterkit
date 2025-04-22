@@ -21,16 +21,16 @@ importers:
         specifier: ^0.12.0
         version: 0.12.0(typescript@5.8.3)(zod@3.24.3)
       '@tanstack/react-query':
-        specifier: ^5.69.0
+        specifier: ^5.74.4
         version: 5.74.4(react@19.1.0)
       '@trpc/client':
-        specifier: ^11.0.0
+        specifier: ^11.1.0
         version: 11.1.0(@trpc/server@11.1.0(typescript@5.8.3))(typescript@5.8.3)
       '@trpc/react-query':
-        specifier: ^11.0.0
+        specifier: ^11.1.0
         version: 11.1.0(@tanstack/react-query@5.74.4(react@19.1.0))(@trpc/client@11.1.0(@trpc/server@11.1.0(typescript@5.8.3))(typescript@5.8.3))(@trpc/server@11.1.0(typescript@5.8.3))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(typescript@5.8.3)
       '@trpc/server':
-        specifier: ^11.0.0
+        specifier: ^11.1.0
         version: 11.1.0(typescript@5.8.3)
       class-variance-authority:
         specifier: ^0.7.1
@@ -48,19 +48,19 @@ importers:
         specifier: ^0.503.0
         version: 0.503.0(react@19.1.0)
       next:
-        specifier: ^15.2.3
+        specifier: ^15.3.1
         version: 15.3.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       next-themes:
         specifier: ^0.4.6
         version: 0.4.6(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       postgres:
-        specifier: ^3.4.4
+        specifier: ^3.4.5
         version: 3.4.5
       react:
-        specifier: ^19.0.0
+        specifier: ^19.1.0
         version: 19.1.0
       react-dom:
-        specifier: ^19.0.0
+        specifier: ^19.1.0
         version: 19.1.0(react@19.1.0)
       react-icons:
         specifier: ^5.5.0
@@ -69,7 +69,7 @@ importers:
         specifier: ^0.0.1
         version: 0.0.1
       superjson:
-        specifier: ^2.2.1
+        specifier: ^2.2.2
         version: 2.2.2
       tailwind-merge:
         specifier: ^3.2.0
@@ -78,32 +78,32 @@ importers:
         specifier: ^1.2.8
         version: 1.2.8
       zod:
-        specifier: ^3.24.2
+        specifier: ^3.24.3
         version: 3.24.3
     devDependencies:
       '@eslint/eslintrc':
         specifier: ^3.3.1
         version: 3.3.1
       '@tailwindcss/postcss':
-        specifier: ^4.0.15
+        specifier: ^4.1.4
         version: 4.1.4
       '@types/node':
-        specifier: ^20.14.10
+        specifier: ^20.17.30
         version: 20.17.30
       '@types/react':
-        specifier: ^19.0.0
+        specifier: ^19.1.2
         version: 19.1.2
       '@types/react-dom':
-        specifier: ^19.0.0
+        specifier: ^19.1.2
         version: 19.1.2(@types/react@19.1.2)
       drizzle-kit:
-        specifier: ^0.30.5
+        specifier: ^0.30.6
         version: 0.30.6
       eslint:
-        specifier: ^9.23.0
+        specifier: ^9.25.1
         version: 9.25.1(jiti@2.4.2)
       eslint-config-next:
-        specifier: ^15.2.3
+        specifier: ^15.3.1
         version: 15.3.1(eslint@9.25.1(jiti@2.4.2))(typescript@5.8.3)
       eslint-plugin-drizzle:
         specifier: ^0.2.3
@@ -118,13 +118,13 @@ importers:
         specifier: ^0.6.11
         version: 0.6.11(prettier@3.5.3)
       tailwindcss:
-        specifier: ^4.0.15
+        specifier: ^4.1.4
         version: 4.1.4
       typescript:
-        specifier: ^5.8.2
+        specifier: ^5.8.3
         version: 5.8.3
       typescript-eslint:
-        specifier: ^8.27.0
+        specifier: ^8.31.0
         version: 8.31.0(eslint@9.25.1(jiti@2.4.2))(typescript@5.8.3)
 
 packages:
