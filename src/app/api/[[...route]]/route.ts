@@ -15,10 +15,11 @@ const api = new Hono().basePath("/api");
  * handling a HTTP request (e.g. when you make requests from Client Components).
  */
 const createContext = async (
-  _: FetchCreateContextFnOptions,
+  opts: FetchCreateContextFnOptions,
   honoContext: Context,
 ) => {
   return createTRPCContext({
+    request: opts.req,
     headers: honoContext.req.raw.headers,
   });
 };
