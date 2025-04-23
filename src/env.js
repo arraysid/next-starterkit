@@ -14,6 +14,7 @@ export const env = createEnv({
     BETTER_AUTH_SECRET: z.string(),
     AUTH_GOOGLE_CLIENT_ID: z.string(),
     AUTH_GOOGLE_CLIENT_SECRET: z.string(),
+    MIDTRANS_SERVER_KEY: z.string(),
   },
 
   /**
@@ -23,6 +24,7 @@ export const env = createEnv({
    */
   client: {
     NEXT_PUBLIC_BACKEND_URL: z.string().default("http://localhost:3000"),
+    NEXT_PUBLIC_MIDTRANS_CLIENT_KEY: z.string(),
   },
 
   /**
@@ -31,12 +33,15 @@ export const env = createEnv({
    */
   runtimeEnv: {
     NEXT_PUBLIC_BACKEND_URL: process.env.NEXT_PUBLIC_BACKEND_URL,
+    NEXT_PUBLIC_MIDTRANS_CLIENT_KEY:
+      process.env.NEXT_PUBLIC_MIDTRANS_CLIENT_KEY,
 
     DATABASE_URL: process.env.DATABASE_URL,
     NODE_ENV: process.env.NODE_ENV,
     BETTER_AUTH_SECRET: process.env.BETTER_AUTH_SECRET,
     AUTH_GOOGLE_CLIENT_ID: process.env.AUTH_GOOGLE_CLIENT_ID,
     AUTH_GOOGLE_CLIENT_SECRET: process.env.AUTH_GOOGLE_CLIENT_SECRET,
+    MIDTRANS_SERVER_KEY: process.env.MIDTRANS_SERVER_KEY,
   },
   /**
    * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially
