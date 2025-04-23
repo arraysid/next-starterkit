@@ -1,3 +1,4 @@
+/* eslint-disable */
 import "server-only";
 
 import { appRouter, type AppRouter } from "@/server/api/root";

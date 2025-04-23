@@ -17,7 +17,8 @@
     "lint:fix": "next lint --fix",
     "preview": "next build && next start",
     "start": "next start",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "auth:generate": "pnpm dlx @better-auth/cli generate --config ./src/server/auth/index.ts --output ./src/server/db/auth-schema.ts"
   },
   "dependencies": {
     "@hono/trpc-server": "^0.3.4",
@@ -28,6 +29,7 @@
     "@trpc/client": "^11.1.0",
     "@trpc/server": "^11.1.0",
     "@trpc/tanstack-react-query": "^11.1.0",
+    "better-auth": "^1.2.7",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "drizzle-orm": "^0.41.0",

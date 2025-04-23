@@ -1,6 +1,7 @@
 import { env } from "@/env";
 import { appRouter } from "@/server/api/root";
 import { createTRPCContext } from "@/server/api/trpc";
+import { auth } from "@/server/auth";
 import { trpcServer } from "@hono/trpc-server";
 import type { FetchCreateContextFnOptions } from "@trpc/server/adapters/fetch";
 import { Hono, type Context } from "hono";
@@ -23,6 +24,8 @@ const createContext = async (
     headers: honoContext.req.raw.headers,
   });
 };
+
+api.on(["POST", "GET"], "/auth/**", (c) => auth.handler(c.req.raw));
 
 api.use(
   "/procedures/*",
